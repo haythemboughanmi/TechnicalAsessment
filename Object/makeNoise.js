@@ -3,5 +3,13 @@
 
 var animal;
 var makeNoise;
+var animal= {
+    type: "dog",
+    name: "kaleb",
+    noise() { console.log("hab hab") }
+ };
+function makeNoise(animal){
+    return animal.noise()
+}
 
 

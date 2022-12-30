@@ -3,5 +3,7 @@
 
 var animal;
 var findAge;
-
+function findAge(animal){
+    return animal.age
+}
 

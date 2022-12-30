@@ -14,19 +14,22 @@
       return num * num;
    }
 
-   square(10) + 2;
-   square(100) + square(77);
-   square(8 / 2)
-   square(2 + 17);
-   square(square(15));
+   square(10) + 2; 102
+   square(100) + square(77); 15929
+   square(8 / 2) 16
+   square(2 + 17); 361
+   square(square(15)); 50625
    ```
 
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
+   we multiplied 15*15 then we multiplied the result * square(15)
 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
+
+   because num is parameter we can change with in other parameter
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -37,44 +40,47 @@
    ```js
    function square(monkey) {
      return x * x;
-   }
+   } x is not defined
 
    function square(5) {
      return 5 * 5;
    }
-
+  Unexpected number
    function square("x") {
      return "x" * "x";
-   }
+   }  Unexpected string
    ```
 
 5. Fix the invalid syntax in the following functions (you can copy and paste these
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function square1(x){
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2 (x){
      return x * x;
    }
 
-   function (x) square3 {
+   function square3(x)  {
      return x * x;
+     }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
 
    ```js
-   function square(x){return x*x;}
+   function square(x){ 
+    return x * x;
+    }
 
-   function square (x) { return x *x;
+   function square(x){ 
+    return x * x;
    }
 
-   function square(x)
-   {
+   function square(x){
    return x * x;
    }
    ```
@@ -83,7 +89,7 @@
 
   ```js
   function cube(x) {
-    // your code here
+    return x * x * x
   }
   ```
 
@@ -93,18 +99,28 @@
 
   ```js
   // don't forget the parameters!
-  function fullName() {
-    // your code here
+  function fullName(firstName,lastName) {
+  return firstName+" "+lastName
   }
   fullName("John", "Doe") // => "John Doe"
   ```
 
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
+    
+   ```js
+   function average(a,b){
+    return (a+b)/2
+   }
+   ```
 
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
-
+````js
+function greeter(name){
+  return "hello"+","+"<"+name+">"+"!"
+}
+````
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
 
@@ -114,6 +130,89 @@
     ```js
     function perimeterRect(l, w) {
       return 2 * (l + w);
+    }
+    function SquareArea(s){
+      return s*s
+    }
+    function SquarePerimeter(s){
+      return 4*s
+    }
+    function RectangleArea(l,w){
+      return l*w
+    }
+    function RectanglePerimeter(l,w){
+      return (2*l)+(2*w)
+    }
+    function ParallelogramArea(l,h){
+      return l*w
+    }
+    function ParallelogramPerimeter(l,w){
+      return (2*l)+(2*w)
+    }
+    function TrapezoidArea(h,b1,b2){
+      var u=h/2
+      return u*(b1+b2)
+    }
+    function TrapezoidPerimeter(s2,s1,b1,b2){
+      return s1+s2+b1+b2
+    }
+    function triangleArea(b,h){
+      return (b*h)/2
+    }
+    function trianglePerimeter(b,s1,s2){
+      return b+s1+s2
+    }
+    function circleArea(r){
+      return Math.PI * (r*r)
+      }
+      function circlePerimeter(r){
+        var d=2*r
+      return Math.PI * d
+      }
+      function Rectangularsolid(l,w,h){
+      return l*w*h
+    }
+    function Rectangularsolid2(l,w,h){
+      return  (2*l*h ) + ( 2*w*h) + (2*w*l)
+    }
+    function Cube(s){
+      return s*s*s
+    }
+    function Cube2(s){
+      return 6*(s*s)
+    }
+    function RightCircularCylinder(r,h){
+      return Math.PI*(r*r)*h
+    }
+    function RightCircularCylinder2(r,h){
+      var z= Math.PI*2
+      return z*(r*h)+z*(r*r)
+    }
+    function Sphere(r){
+      var v = (Math.PI*4)/3
+      return v*(r*r*r)
+    }
+    function Sphere2(r){
+      var v = Math.PI*4
+      return v*(r*r)
+    }
+     function RightCircularCone(r,h){
+      var x=Math.PI/3
+      return x*(r*r)*
+    }
+    function RightCircularCone2(r,h){
+      var x= Math.sqrt((r*r)+(h*h))
+      return Math.PI*(r*x)
+    }
+    function Pyramid(l,h,w){
+      return(l,w,h)/3
+    }
+    function Frustum(r,R,h){
+      var x=((r*r)+(r*R)+(R*R))
+      return (Math.PI*x*h)/3
+    }
+    function Frustum2(r,R,s){
+      return  Math.PI*s*(R+r)
     }
     ```
 
@@ -155,15 +254,33 @@ Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu
 
   Write a function `futureValue` that can be used to calculate the *future value*
   of a quantity of money using compound interest.
+  ````js
+  function futureValue(p,i,n,t){
+    var x=(1+(i/n))
+    return p*Math.pow(x,n*t)
+  }
+  ````
 
   Use the function to calculate what the future value of $1700 (*P* = 1700)
   deposited in a bank that pays an annual interest rate of 4.7% (*i* = 0.047),
   compounded quarterly (*n* = 4) after 6 years (*t* = 6) (you can use `Math.pow`
   to do exponentiation).
 
+
+
 2. Write a `power` function that accepts the parameters `base` and `exponent`
    and returns the result. Replace `square` and `cube` with the `power` function
    you just wrote. Do not use `Math.pow`.
+
+  ````js
+  var exponent = function(base, exp) {
+    if(exp===0){
+        return 1
+    }
+    else{return base * exponent(base ,exp-1)
+   }
+  }
+
 
 3. Write your own square-root function called `sqrt` that accepts a `number`
    parameter and returns an approximate square root. Square-root approximations
